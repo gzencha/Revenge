@@ -1,0 +1,93 @@
+package views;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.CardLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import java.awt.Dimension;
+
+public class UI extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UI frame = new UI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public UI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(UI.class.getResource("/resources/rev.png")));
+		setTitle("---Revenge The Game---");
+		setBackground(Color.BLACK);
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		setSize(800,600);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new CardLayout(0, 0));
+		
+		JPanel startScreen = new JPanel();
+		startScreen.setBackground(Color.BLACK);
+		contentPane.add(startScreen, "name_151966659871964");
+		
+		JLabel revengeImage = new JLabel("New label");
+		revengeImage.setPreferredSize(new Dimension(600, 357));
+		revengeImage.setMaximumSize(new Dimension(600, 357));
+		revengeImage.setMinimumSize(new Dimension(600, 357));
+		revengeImage.setOpaque(true);
+		revengeImage.setSize(600,357);
+		GroupLayout gl_startScreen = new GroupLayout(startScreen);
+		gl_startScreen.setHorizontalGroup(
+			gl_startScreen.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_startScreen.createSequentialGroup()
+					.addGap(132)
+					.addComponent(revengeImage, GroupLayout.PREFERRED_SIZE, 363, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(289, Short.MAX_VALUE))
+		);
+		gl_startScreen.setVerticalGroup(
+			gl_startScreen.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_startScreen.createSequentialGroup()
+					.addGap(110)
+					.addComponent(revengeImage, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(282, Short.MAX_VALUE))
+		);
+		startScreen.setLayout(gl_startScreen);
+		
+		JPanel storyScreen1 = new JPanel();
+		contentPane.add(storyScreen1, "name_151986291467823");
+		
+		JPanel storyScreen2 = new JPanel();
+		contentPane.add(storyScreen2, "name_152005658790722");
+		
+		JPanel storyScreen3 = new JPanel();
+		contentPane.add(storyScreen3, "name_152020944598509");
+		
+		JPanel accaptence = new JPanel();
+		contentPane.add(accaptence, "name_152032317065102");
+	}
+}

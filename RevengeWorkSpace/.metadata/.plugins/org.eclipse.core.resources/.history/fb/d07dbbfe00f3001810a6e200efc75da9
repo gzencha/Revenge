@@ -1,0 +1,15 @@
+import views.UI;
+
+public class Game {
+
+	
+	UI ui=new UI();
+	public Game() {
+		
+	}
+	public static void main(String[] args) {
+		
+		new Game();
+	}
+
+}

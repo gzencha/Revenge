@@ -1,0 +1,34 @@
+import java.awt.EventQueue;
+
+import views.UI;
+
+public class Game {
+
+	
+	//UI ui=new UI();
+	
+	public Game() {
+		
+		//ui.initComponents();
+		
+	}
+	/*public static void main(String[] args) {
+		
+		new Game();
+		
+	}
+*/
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UI frame = new UI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+}

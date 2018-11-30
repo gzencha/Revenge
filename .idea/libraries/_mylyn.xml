@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name=".mylyn">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RevengeWorkSpace/.metadata/.mylyn/repositories.xml.zip!/" />
+      <root url="jar://$PROJECT_DIR$/RevengeWorkSpace/.metadata/.mylyn/_tasks.xml.zip!/" />
+      <root url="jar://$PROJECT_DIR$/RevengeWorkSpace/.metadata/.mylyn/tasks.xml.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

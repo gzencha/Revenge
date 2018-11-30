@@ -1,0 +1,119 @@
+package views;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.CardLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import java.awt.Dimension;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.ButtonGroup;
+
+public class UI extends JFrame {
+
+	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UI frame = new UI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public UI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(UI.class.getResource("/resources/rev.png")));
+		setTitle("---Revenge The Game---");
+		setBackground(Color.BLACK);
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		setSize(800,600);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new CardLayout(0, 0));
+		
+		JPanel startScreen = new JPanel();
+		startScreen.setBackground(Color.BLACK);
+		contentPane.add(startScreen, "name_151966659871964");
+		
+		JLabel revengeImage = new JLabel("");
+		revengeImage.setBackground(Color.BLACK);
+		revengeImage.setIcon(new ImageIcon(UI.class.getResource("/resources/Revenge MainMenu600-356.jpg")));
+		revengeImage.setPreferredSize(new Dimension(600, 357));
+		revengeImage.setMaximumSize(new Dimension(600, 357));
+		revengeImage.setMinimumSize(new Dimension(600, 357));
+		revengeImage.setOpaque(true);
+		revengeImage.setSize(600,357);
+		
+		JButton creditButton = new JButton("Credits");
+		creditButton.setForeground(Color.WHITE);
+		buttonGroup.add(creditButton);
+		creditButton.setBackground(Color.BLACK);
+		
+		JButton startButton = new JButton("Start!");
+		startButton.setForeground(Color.WHITE);
+		buttonGroup.add(startButton);
+		startButton.setBackground(Color.BLACK);
+		GroupLayout gl_startScreen = new GroupLayout(startScreen);
+		gl_startScreen.setHorizontalGroup(
+			gl_startScreen.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_startScreen.createSequentialGroup()
+					.addGap(92)
+					.addGroup(gl_startScreen.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(gl_startScreen.createSequentialGroup()
+							.addComponent(creditButton, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(startButton, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE))
+						.addComponent(revengeImage, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(92, Short.MAX_VALUE))
+		);
+		gl_startScreen.setVerticalGroup(
+			gl_startScreen.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_startScreen.createSequentialGroup()
+					.addGap(70)
+					.addComponent(revengeImage, GroupLayout.PREFERRED_SIZE, 338, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+					.addGroup(gl_startScreen.createParallelGroup(Alignment.BASELINE)
+						.addComponent(creditButton)
+						.addComponent(startButton))
+					.addGap(63))
+		);
+		startScreen.setLayout(gl_startScreen);
+		
+		JPanel storyScreen1 = new JPanel();
+		contentPane.add(storyScreen1, "name_151986291467823");
+		
+		JPanel storyScreen2 = new JPanel();
+		contentPane.add(storyScreen2, "name_152005658790722");
+		
+		JPanel storyScreen3 = new JPanel();
+		contentPane.add(storyScreen3, "name_152020944598509");
+		
+		JPanel accaptence = new JPanel();
+		contentPane.add(accaptence, "name_152032317065102");
+	}
+}

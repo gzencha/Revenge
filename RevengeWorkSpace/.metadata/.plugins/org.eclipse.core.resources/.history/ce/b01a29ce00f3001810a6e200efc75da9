@@ -1,0 +1,238 @@
+package views;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.CardLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import java.awt.Dimension;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class UI extends JFrame {
+
+	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UI frame = new UI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public UI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(UI.class.getResource("/resources/rev.png")));
+		setTitle("---Revenge The Game---");
+		setBackground(Color.BLACK);
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		setSize(800,600);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new CardLayout(0, 0));
+		
+		JPanel startScreen = new JPanel();
+		startScreen.setBackground(Color.BLACK);
+		contentPane.add(startScreen, "name_151966659871964");
+		
+		JLabel revengeImage = new JLabel("");
+		revengeImage.setBackground(Color.BLACK);
+		revengeImage.setIcon(new ImageIcon(UI.class.getResource("/resources/Revenge MainMenu600-356.jpg")));
+		revengeImage.setPreferredSize(new Dimension(600, 357));
+		revengeImage.setMaximumSize(new Dimension(600, 357));
+		revengeImage.setMinimumSize(new Dimension(600, 357));
+		revengeImage.setOpaque(true);
+		revengeImage.setSize(600,357);
+		
+		JButton creditButton = new JButton("Credits");
+		creditButton.setForeground(Color.WHITE);
+		buttonGroup.add(creditButton);
+		creditButton.setBackground(Color.BLACK);
+		
+		JButton startButton = new JButton("Start!");
+		startButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		startButton.setForeground(Color.WHITE);
+		buttonGroup.add(startButton);
+		startButton.setBackground(Color.BLACK);
+		GroupLayout gl_startScreen = new GroupLayout(startScreen);
+		gl_startScreen.setHorizontalGroup(
+			gl_startScreen.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_startScreen.createSequentialGroup()
+					.addGap(92)
+					.addGroup(gl_startScreen.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(gl_startScreen.createSequentialGroup()
+							.addComponent(creditButton, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(startButton, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE))
+						.addComponent(revengeImage, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(92, Short.MAX_VALUE))
+		);
+		gl_startScreen.setVerticalGroup(
+			gl_startScreen.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_startScreen.createSequentialGroup()
+					.addGap(70)
+					.addComponent(revengeImage, GroupLayout.PREFERRED_SIZE, 338, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+					.addGroup(gl_startScreen.createParallelGroup(Alignment.BASELINE)
+						.addComponent(creditButton)
+						.addComponent(startButton))
+					.addGap(63))
+		);
+		startScreen.setLayout(gl_startScreen);
+		
+		JPanel storyScreen1 = new JPanel();
+		storyScreen1.setBackground(Color.BLACK);
+		contentPane.add(storyScreen1, "name_151986291467823");
+		
+		JLabel storyScreen1Image = new JLabel("");
+		storyScreen1Image.setBackground(Color.LIGHT_GRAY);
+		storyScreen1Image.setOpaque(true);
+		
+		JButton storyScreen1contButton = new JButton("");
+		GroupLayout gl_storyScreen1 = new GroupLayout(storyScreen1);
+		gl_storyScreen1.setHorizontalGroup(
+			gl_storyScreen1.createParallelGroup(Alignment.LEADING)
+				.addComponent(storyScreen1Image, GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+				.addGroup(Alignment.TRAILING, gl_storyScreen1.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(storyScreen1contButton, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addGap(10))
+		);
+		gl_storyScreen1.setVerticalGroup(
+			gl_storyScreen1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_storyScreen1.createSequentialGroup()
+					.addComponent(storyScreen1Image, GroupLayout.PREFERRED_SIZE, 540, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(storyScreen1contButton, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		storyScreen1.setLayout(gl_storyScreen1);
+		
+		JPanel storyScreen2 = new JPanel();
+		storyScreen2.setBackground(Color.BLACK);
+		contentPane.add(storyScreen2, "name_152005658790722");
+		
+		JLabel storyScreen2Image = new JLabel("");
+		storyScreen2Image.setBackground(Color.LIGHT_GRAY);
+		storyScreen2Image.setOpaque(true);
+		
+		JButton storyScreen2contButton = new JButton("");
+		GroupLayout gl_storyScreen2 = new GroupLayout(storyScreen2);
+		gl_storyScreen2.setHorizontalGroup(
+			gl_storyScreen2.createParallelGroup(Alignment.LEADING)
+				.addComponent(storyScreen2Image, GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+				.addGroup(Alignment.TRAILING, gl_storyScreen2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(storyScreen2contButton, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+					.addGap(10))
+		);
+		gl_storyScreen2.setVerticalGroup(
+			gl_storyScreen2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_storyScreen2.createSequentialGroup()
+					.addComponent(storyScreen2Image, GroupLayout.PREFERRED_SIZE, 541, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(storyScreen2contButton, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		storyScreen2.setLayout(gl_storyScreen2);
+		
+		JPanel storyScreen3 = new JPanel();
+		storyScreen3.setBackground(Color.BLACK);
+		contentPane.add(storyScreen3, "name_152020944598509");
+		
+		JLabel storyScreen3Image = new JLabel("");
+		storyScreen3Image.setBackground(Color.LIGHT_GRAY);
+		storyScreen3Image.setOpaque(true);
+		
+		JButton storyScreen3contButton = new JButton("");
+		GroupLayout gl_storyScreen3 = new GroupLayout(storyScreen3);
+		gl_storyScreen3.setHorizontalGroup(
+			gl_storyScreen3.createParallelGroup(Alignment.LEADING)
+				.addComponent(storyScreen3Image, GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+				.addGroup(Alignment.TRAILING, gl_storyScreen3.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(storyScreen3contButton)
+					.addGap(10))
+		);
+		gl_storyScreen3.setVerticalGroup(
+			gl_storyScreen3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_storyScreen3.createSequentialGroup()
+					.addComponent(storyScreen3Image, GroupLayout.PREFERRED_SIZE, 539, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(storyScreen3contButton, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		storyScreen3.setLayout(gl_storyScreen3);
+		
+		JPanel accaptence = new JPanel();
+		accaptence.setBackground(Color.BLACK);
+		contentPane.add(accaptence, "name_152032317065102");
+		
+		JLabel accaptencePanelimg = new JLabel("");
+		accaptencePanelimg.setBackground(Color.LIGHT_GRAY);
+		accaptencePanelimg.setOpaque(true);
+		
+		JButton gaveUpButton = new JButton("Gave up like a loser!");
+		gaveUpButton.setForeground(Color.WHITE);
+		gaveUpButton.setBackground(Color.BLACK);
+		
+		JButton acceptButton = new JButton("Accept the Mission!");
+		acceptButton.setForeground(Color.WHITE);
+		acceptButton.setBackground(Color.BLACK);
+		GroupLayout gl_accaptence = new GroupLayout(accaptence);
+		gl_accaptence.setHorizontalGroup(
+			gl_accaptence.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_accaptence.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(accaptencePanelimg, GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(Alignment.TRAILING, gl_accaptence.createSequentialGroup()
+					.addGap(137)
+					.addComponent(gaveUpButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(253)
+					.addComponent(acceptButton)
+					.addGap(136))
+		);
+		gl_accaptence.setVerticalGroup(
+			gl_accaptence.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_accaptence.createSequentialGroup()
+					.addComponent(accaptencePanelimg, GroupLayout.PREFERRED_SIZE, 383, GroupLayout.PREFERRED_SIZE)
+					.addGap(77)
+					.addGroup(gl_accaptence.createParallelGroup(Alignment.BASELINE)
+						.addComponent(gaveUpButton)
+						.addComponent(acceptButton))
+					.addContainerGap())
+		);
+		accaptence.setLayout(gl_accaptence);
+	}
+}

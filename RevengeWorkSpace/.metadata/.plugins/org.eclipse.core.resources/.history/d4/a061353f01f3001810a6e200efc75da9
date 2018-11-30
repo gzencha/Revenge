@@ -1,0 +1,16 @@
+import views.UI;
+
+public class Game {
+
+	
+	UI ui=new UI();
+	public Game() {
+		
+		ui.UI();
+	}
+	public static void main(String[] args) {
+		
+		new Game();
+	}
+
+}

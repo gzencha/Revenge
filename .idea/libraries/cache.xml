@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="cache">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RevengeWorkSpace/.metadata/.plugins/org.eclipse.equinox.p2.discovery.compatibility/cache/discovery-768508959.zip!/" />
+      <root url="jar://$PROJECT_DIR$/RevengeWorkSpace/.metadata/.plugins/org.eclipse.equinox.p2.discovery.compatibility/cache/discovery1395133654.zip!/" />
+      <root url="jar://$PROJECT_DIR$/RevengeWorkSpace/.metadata/.plugins/org.eclipse.equinox.p2.discovery.compatibility/cache/discovery1248323137.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
